@@ -5,6 +5,7 @@
         <h1>@message</h1>
     </div>
 
+    <div id="fb-root"></div>
     <script>
           // This is called with the results from from FB.getLoginStatus().
           function statusChangeCallback(response) {
@@ -44,7 +45,7 @@
             cookie     : true,  // enable cookies to allow the server to access
                                 // the session
             xfbml      : true,  // parse social plugins on this page
-            version    : 'v2.2' // use version 2.2
+            version    : 'v2.0' // use version 2.2
           });
 
           // Now that we've initialized the JavaScript SDK, we call
@@ -70,7 +71,8 @@
             var js, fjs = d.getElementsByTagName(s)[0];
             if (d.getElementById(id)) return;
             js = d.createElement(s); js.id = id;
-            js.src = "//connect.facebook.net/en_US/sdk.js";
+            //js.src = "//connect.facebook.net/en_US/sdk.js";
+            js.src = "//connect.facebook.net/en_US/sdk.js#xfbml=1&appId=1614876445410505&version=v2.0";
             fjs.parentNode.insertBefore(js, fjs);
           }(document, 'script', 'facebook-jssdk'));
 
