@@ -9,18 +9,19 @@
     <script type='text/javascript' src='@routes.WebJarAssets.at(WebJarAssets.locate("jquery.min.js"))'></script>
     <style>
     body {
-        margin-top: 50px;
+        margin-top: 80px;
     }
     </style>
 </head>
 <body>
-    <div class="navbar navbar-fixed-top">
-        <div class="navbar-inner">
-            <div class="container-fluid">
-                <a id="titleLink" class="brand" href="/">@title</a>
+    <nav class="navbar navbar-inverse  navbar-fixed-top">
+        <div class="container-fluid">
+            <div class="navbar-header">
+                <a class="navbar-brand" href="/">@title</a>
             </div>
         </div>
-    </div>
+    </nav>
+
     <div class="container">
         @content
     </div>

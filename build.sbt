@@ -12,9 +12,9 @@ resolvers += "Typesafe repository" at "http://repo.typesafe.com/typesafe/release
 libraryDependencies ++= Seq(
 	"org.webjars" %% "webjars-play" % "2.3-M1",
 	"com.typesafe.slick" %% "slick" % "2.1.0",
-	"org.webjars" % "bootstrap" % "2.3.1",
+	"org.webjars" % "bootstrap" % "3.3.4",
 	"org.webjars" % "requirejs" % "2.1.11-1",
-	"org.webjars" % "jquery" % "1.9.0"
+	"org.webjars" % "jquery" % "1.11.2"
 )
 
 //PlayScala
