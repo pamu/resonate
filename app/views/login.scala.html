@@ -44,7 +44,7 @@
             cookie     : true,  // enable cookies to allow the server to access
                                 // the session
             xfbml      : true,  // parse social plugins on this page
-            version    : 'v2.2' // use version 2.2
+            version    : 'v2.0' // use version 2.2
           });
 
           // Now that we've initialized the JavaScript SDK, we call
@@ -71,7 +71,7 @@
             if (d.getElementById(id)) return;
             js = d.createElement(s); js.id = id;
             //js.src = "//connect.facebook.net/en_US/sdk.js";
-            js.src = "//connect.facebook.net/en_US/sdk.js#xfbml=1&appId=1614876445410505&version=v2.2"
+            js.src = "//connect.facebook.net/en_US/sdk.js#xfbml=1&appId=1614876445410505&version=v2.0"
             fjs.parentNode.insertBefore(js, fjs);
           }(document, 'script', 'facebook-jssdk'));
 
@@ -93,7 +93,7 @@
       the FB.login() function when clicked.
     -->
 
-    <fb:login-button scope="public_profile,email" onlogin="checkLoginState();">
+    <fb:login-button style="height: 200px;" scope="public_profile,email" onlogin="checkLoginState();">
     </fb:login-button>
 
     <div id="status">
