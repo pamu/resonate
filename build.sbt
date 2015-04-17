@@ -2,9 +2,7 @@ name := """resonate"""
 
 version := """1.0.0"""
 
-scalaVersion := """2.10.4"""
-
-sbtVersion := """0.13.8"""
+sbtVersion := """0.13.7"""
 
 // The Typesafe repository
 resolvers += "Typesafe repository" at "http://repo.typesafe.com/typesafe/releases/"
