@@ -7,6 +7,7 @@ object Application extends Controller {
   def login = Action {
     Ok(views.html.login("Login to Grito"))
   }
+
   def index = Action {
     Ok(views.html.index("Grito"))
   }
