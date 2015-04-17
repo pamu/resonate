@@ -85,7 +85,7 @@
             FB.api('/me', function(response) {
               console.log('Successful login for: ' + response.name);
               document.getElementById('status').innerHTML =
-                'Thanks for logging in, ' + response.name + '!';
+                '<span class='alert alert-info'>Thanks for logging in, ' + response.name + '!</span>';
             });
           }
     </script>
@@ -96,8 +96,13 @@
       the FB.login() function when clicked.
     -->
 
-    <fb:login-button size="large" scope="public_profile,email" onlogin="checkLoginState();">
-    </fb:login-button>
+	<div class="well">
+		<center>
+			<fb:login-button style="align: center;" size="large" scope="public_profile,email" onlogin="checkLoginState();">
+    		</fb:login-button>
+		</center>
+	</div>
+    
 
     <div id="status"></div>
 }
