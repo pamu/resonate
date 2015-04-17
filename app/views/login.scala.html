@@ -1,10 +1,7 @@
 @(message: String)
 
 @main("Welcome to Grito") {
-    <div class="well">
-        <h1>@message</h1>
-    </div>
-
+	
     <div id="fb-root"></div>
 
     <script>
@@ -95,14 +92,11 @@
       the JavaScript SDK to present a graphical Login button that triggers
       the FB.login() function when clicked.
     -->
-
-	<div class="well">
-		<center>
-			<fb:login-button style="align: center;" size="large" scope="public_profile,email" onlogin="checkLoginState();">
-    		</fb:login-button>
-		</center>
-	</div>
-    
-
-    <div id="status"></div>
+    <div id="divElement" class="fb-login-button" data-show-faces="false" data-max-rows="1" 
+		data-size="xlarge">Login with Facebook</div>
+	<!--
+		<fb:login-button style="padding: 5x 10px;" size="xlarge" scope="public_profile,email" onlogin="checkLoginState();">
+    	</fb:login-button>
+    -->
+	<div id="status"></div>
 }
