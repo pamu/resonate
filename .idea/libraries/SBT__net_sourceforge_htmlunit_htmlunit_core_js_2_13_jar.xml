@@ -1,9 +1,0 @@
-<component name="libraryTable">
-  <library name="SBT: net.sourceforge.htmlunit:htmlunit-core-js:2.13:jar">
-    <CLASSES>
-      <root url="jar://$USER_HOME$/activator-1.3.2/repository/net.sourceforge.htmlunit/htmlunit-core-js/2.13/jars/htmlunit-core-js.jar!/" />
-    </CLASSES>
-    <JAVADOC />
-    <SOURCES />
-  </library>
-</component>

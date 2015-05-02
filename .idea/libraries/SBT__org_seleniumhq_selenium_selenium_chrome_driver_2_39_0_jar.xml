@@ -1,9 +1,0 @@
-<component name="libraryTable">
-  <library name="SBT: org.seleniumhq.selenium:selenium-chrome-driver:2.39.0:jar">
-    <CLASSES>
-      <root url="jar://$USER_HOME$/activator-1.3.2/repository/org.seleniumhq.selenium/selenium-chrome-driver/2.39.0/jars/selenium-chrome-driver.jar!/" />
-    </CLASSES>
-    <JAVADOC />
-    <SOURCES />
-  </library>
-</component>

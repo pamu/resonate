@@ -1,9 +1,0 @@
-<component name="libraryTable">
-  <library name="SBT: org.easytesting:fest-assert:1.4:jar">
-    <CLASSES>
-      <root url="jar://$USER_HOME$/activator-1.3.2/repository/org.easytesting/fest-assert/1.4/jars/fest-assert.jar!/" />
-    </CLASSES>
-    <JAVADOC />
-    <SOURCES />
-  </library>
-</component>

@@ -1,9 +1,0 @@
-<component name="libraryTable">
-  <library name="SBT: org.objenesis:objenesis:1.0:jar">
-    <CLASSES>
-      <root url="jar://$USER_HOME$/activator-1.3.2/repository/org.objenesis/objenesis/1.0/jars/objenesis.jar!/" />
-    </CLASSES>
-    <JAVADOC />
-    <SOURCES />
-  </library>
-</component>
