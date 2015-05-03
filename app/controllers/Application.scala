@@ -9,7 +9,12 @@ object Application extends Controller {
   }
 
   def index = Action {
-    Ok(views.html.index("Grito"))
+    //Ok(views.html.index("Grito"))
+    Redirect(routes.Application.login)
+  }
+
+  def home = Action {
+    Ok(views.html.home("Welcome to Home"))
   }
 
 }
