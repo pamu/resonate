@@ -5,6 +5,7 @@
 GET     /login                      controllers.Application.login()
 GET     /                           controllers.Application.index()
 GET     /home                       controllers.Application.home()
+POST    /fbHome                     controllers.Application.fbHome()
 
 # Javascript routing
 GET /javascriptRoutes               controllers.Application.javascriptRoutes
