@@ -80,27 +80,6 @@
           function testAPI() {
             console.log('Welcome!  Fetching your information.... ');
             FB.api('/me', function(response) {
-              //code
-              window.location.href = "http://grito.herokuapp.com/home"
-              /**
-              var item = {};
-              item["email"] = response.email;
-              var json = JSON.stringify(item);
-              $.ajax({
-                 url: '/fbHome',
-                    type: 'POST',
-                    data: json,
-                    contentType: 'application/json; charset=utf-8',
-                    dataType: 'json',
-                    async: true,
-                    success: function(msg) {
-                        if(msg.status == 200) {
-                            console.log("done");
-                        }
-                    }
-              });
-              **/
-              //code
               console.log('Successful login for: ' + response.name);
               document.getElementById('status').innerHTML =
                 'Thanks for logging in, ' + response.name + '!';
