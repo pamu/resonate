@@ -81,7 +81,8 @@
             console.log('Welcome!  Fetching your information.... ');
             FB.api('/me', function(response) {
               //code
-              //window.location.href = "http://grito.herokuapp.com/home"
+              window.location.href = "http://grito.herokuapp.com/home"
+              /**
               var item = {};
               item["email"] = response.email;
               var json = JSON.stringify(item);
@@ -98,6 +99,7 @@
                         }
                     }
               });
+              **/
               //code
               console.log('Successful login for: ' + response.name);
               document.getElementById('status').innerHTML =
@@ -115,9 +117,11 @@
     <div id="divElement" class="fb-login-button" data-show-faces="false" data-max-rows="1" 
 		data-size="xlarge">Login with Facebook</div>
 	-->
+    <div id="divElement">
+        <fb:login-button style="padding: 5x 10px;" size="xlarge" scope="public_profile,email" onlogin="checkLoginState();">
+        </fb:login-button>
+    </div>
 
-		<fb:login-button style="padding: 5x 10px;" size="xlarge" scope="public_profile,email" onlogin="checkLoginState();">
-    	</fb:login-button>
 
 	<div id="status"></div>
 }
