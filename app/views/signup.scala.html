@@ -1,0 +1,45 @@
+@* signup Template File *@
+@(signupForm: Form[(String, (String, String))])(implicit session: play.api.mvc.Session)
+
+@import helper._
+@import helper.twitterBootstrap._
+
+@main("Signup"){
+		
+		@form(action = routes.Application.signupTarget){
+			
+			<fieldset>
+				
+			<legend>Sign Up or <a href="/login">Go to Login</a></legend>
+			<div class="well">
+			@inputText(
+				signupForm("email"), 
+				'_label -> "Email", 
+				'_showConstraints -> false
+				
+			)
+				
+			@inputPassword(
+				signupForm("passwords.main_password"),
+				'_label -> "Password",
+				'_showConstraints -> false
+				
+			)
+			
+			@inputPassword(
+				signupForm("passwords.confirm_password"),
+				'_label -> "Repeat Password",
+				'_showConstraints -> false
+				)
+			
+			<button class="btn btn-default">Sign Up</button>
+			
+			</div>
+			</fieldset>
+		}
+		
+		@signupForm.globalErrors.map{ error =>
+			<div class="alert alert-error">@Messages(error.message)</div>
+		}
+	
+}

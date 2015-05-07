@@ -2,10 +2,14 @@
 # This file defines all application routes (Higher priority routes first)
 # ~~~~
 
-GET     /login                      controllers.Application.login()
 GET     /                           controllers.Application.index()
 GET     /home                       controllers.Application.home()
-POST    /fbHome                     controllers.Application.fbHome()
+
+GET     /login                      controllers.Application.login()
+POST    /loginTarget                controllers.Application.loginTarget()
+
+GET     /signup                     controllers.Application.signup()
+POST    /signupTarget               controllers.Application.signupTarget()
 
 # Map static resources from the /public folder to the /assets URL path
 GET     /assets/*file               controllers.Assets.at(path="/public", file)
