@@ -36,8 +36,8 @@ object Datastore {
   
   def clean = db.withSession { implicit sx =>
     {
-       addresses.ddl.drop
-       users.ddl.drop
+      users.ddl.drop
+      addresses.ddl.drop
     }
   }
   
