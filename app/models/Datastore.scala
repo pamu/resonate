@@ -7,8 +7,7 @@ import java.util.Date
 import java.sql.Timestamp
 
 object Datastore {
-  val uri = new URI("""postgres://pdfadgyjhqnnln:zcDy12Sp9maEenok4V_tTgcAc-@ec2-54-225-154-5.
-  compute-1.amazonaws.com:5432/d2it67fp1ug27a""")
+  val uri = new URI("""postgres://pdfadgyjhqnnln:zcDy12Sp9maEenok4V_tTgcAc-@ec2-54-225-154-5.compute-1.amazonaws.com:5432/d2it67fp1ug27a""")
 
   val username = uri.getUserInfo.split(":")(0)
   
