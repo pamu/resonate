@@ -38,7 +38,7 @@ object Tables {
     def addressId = column[Long]("address_id", O.Nullable)
     def bio = column[String]("bio", O.Nullable)
     def timestamp = column[Timestamp]("timestamp", O.NotNull)
-    def id = column[Long]("id", O.PrimaryKey, O.NotNull)
+    def id = column[Long]("id", O.PrimaryKey, O.AutoInc)
     
     def * = (email, password, timestamp, firstName.?, lastName.?, gender.?, dob.?, addressId.?, bio.?, id.?) <> (User.tupled, User.unapply _)
     

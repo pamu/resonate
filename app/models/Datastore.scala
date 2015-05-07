@@ -34,6 +34,13 @@ object Datastore {
     }
   }
   
+  def clean = db.withSession { implicit sx =>
+    {
+       addresses.ddl.drop
+       users.ddl.drop
+    }
+  }
+  
   def saveUser(email: String, password: String): Unit = db.withSession { implicit sx => {
     val date = new Date()
     users += User(email, password, new Timestamp(date.getTime))
