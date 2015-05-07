@@ -7,6 +7,7 @@ import play.api.data.Forms._
 import models.Utils._
 import scala.concurrent.Future
 import play.api.libs.concurrent.Execution.Implicits.defaultContext
+import models.Datastore
 
 object Application extends Controller {
 
@@ -33,7 +34,7 @@ object Application extends Controller {
     Future {
       loginForm.bindFromRequest().fold(
          hasErrors => BadRequest(views.html.login(hasErrors)), 
-         success => Ok("done")
+         success => Redirect(routes.Application.home)
          ) 
     }
   }
@@ -56,7 +57,10 @@ object Application extends Controller {
     Future {
       signupForm.bindFromRequest().fold(
         hasErrors => BadRequest(views.html.signup(hasErrors)),
-        success => Ok("done")
+        success => {
+          Datastore.saveUser(success._1, success._2._1)
+          Redirect(routes.Application.login)
+        }
         )
     }
   }
