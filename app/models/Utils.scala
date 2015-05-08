@@ -55,7 +55,7 @@ object Utils {
     if (query.exists.run) {
       val verification = query.first
       utils.Utils.sendHtmlEmail("pamulabs@gmail.com", verification.email, "Verification Email from Grito",
-        s"""<a href="http://grito.herokuapp.com/${verification.email}/${verification.string}">
+        s"""<a href="http://grito.herokuapp.com/verification/${verification.email}/${verification.string}">
            |Click to verify before link expiry</a>""".stripMargin)
     }
   }}
