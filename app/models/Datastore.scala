@@ -1,5 +1,7 @@
 package models
 
+import play.api.Logger
+
 import scala.slick.driver.PostgresDriver.simple._
 import java.net.URI
 import models.Tables._
@@ -44,7 +46,7 @@ object Datastore {
       verifications.ddl.drop
       users.ddl.drop
       addresses.ddl.drop
-    } catch {case _ =>}
+    } catch {case ex: Exception => Logger.info(ex.getMessage)}
   }
   
   def saveUser(email: String, password: String): Unit = db.withSession { implicit sx => {

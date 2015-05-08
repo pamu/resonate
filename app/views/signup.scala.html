@@ -1,5 +1,5 @@
 @* signup Template File *@
-@(signupForm: Form[(String, (String, String))])(implicit session: play.api.mvc.Session)
+@(signupForm: Form[(String, (String, String))])(flash: play.api.mvc.Flash)(implicit session: play.api.mvc.Session)
 
 @import helper._
 @import helper.twitterBootstrap._
@@ -36,6 +36,10 @@
 			
 			</div>
 			</fieldset>
+		}
+
+		@flash.get("success").map{ message =>
+			<div class="alert alert-success">@message</div>
 		}
 		
 		@signupForm.globalErrors.map{ error =>

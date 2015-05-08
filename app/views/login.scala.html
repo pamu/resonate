@@ -1,4 +1,4 @@
-@(loginForm: Form[(String, String)])(implicit session: play.api.mvc.Session)
+@(loginForm: Form[(String, String)])(flash: play.api.mvc.Flash)(implicit session: play.api.mvc.Session)
 
 @import helper._
 @import helper.twitterBootstrap._
@@ -30,6 +30,10 @@
 			
 			</div>
 		</fieldset>
+
+	@flash.get("success").map{ message =>
+		<div class="alert alert-success">@message</div>
+	}
 	
 	@loginForm.globalErrors.map{ error =>
 		<div class="alert alert-error">@Messages(error.message) <a href="/">Forgot Password ?</a></div>

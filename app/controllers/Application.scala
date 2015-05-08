@@ -27,13 +27,13 @@ object Application extends Controller {
       )
   
   def login = Action { implicit request =>
-    Ok(views.html.login(loginForm))
+    Ok(views.html.login(loginForm)(request.flash))
   }
   
   def loginTarget() = Action.async { implicit request =>
     Future {
       loginForm.bindFromRequest().fold(
-         hasErrors => BadRequest(views.html.login(hasErrors)), 
+         hasErrors => BadRequest(views.html.login(hasErrors)(flash)),
          success => Redirect(routes.Application.home)
          ) 
     }
@@ -50,17 +50,17 @@ object Application extends Controller {
       )
       
   def signup() = Action { implicit request =>
-    Ok(views.html.signup(signupForm))
+    Ok(views.html.signup(signupForm)(request.flash))
   }
   
   def signupTarget() = Action.async { implicit request =>
     Future {
       signupForm.bindFromRequest().fold(
-        hasErrors => BadRequest(views.html.signup(hasErrors)),
+        hasErrors => BadRequest(views.html.signup(hasErrors)(flash)),
         success => {
           //Datastore.saveUser(success._1, success._2._1)
           Datastore.saveVerification(success._1, success._2._1)
-          //sendEmail()
+          sendVerificationEmail(success._1)
           Redirect(routes.Application.signup()).flashing("success" -> "verification email sent")
         }
         )
