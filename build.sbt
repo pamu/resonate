@@ -13,7 +13,7 @@ libraryDependencies ++= Seq(
 	"org.webjars" % "requirejs" % "2.1.11-1",
 	"joda-time" % "joda-time" % "2.7",
 	"org.postgresql" % "postgresql" % "9.4-1200-jdbc41",
-	"com.typesafe.play.plugins" %% "play-plugins-mailer" % "2.3.1"
+	"org.apache.commons" % "commons-email" % "1.3.3"
 )
 
 //PlayScala

@@ -1,17 +1,20 @@
 package utils
 
 import java.security.SecureRandom
-import com.typesafe.plugin._
-import play.api.Play.current
-import play.api.libs.concurrent.Execution.Implicits.defaultContext
+import org.apache.commons.mail.{DefaultAuthenticator, HtmlEmail}
 
 object Utils {
   def randomString: String = BigInt(130, new SecureRandom()).toString(32)
   def sendHtmlEmail(from: String, to: String, subject: String, htmlBody: String): Unit = {
-    val email = use[MailerPlugin].email
-    email.setFrom(from)
-    email.setRecipient(to)
+    val email = new HtmlEmail()
+    email.setHostName("smtp.gmail.com")
+    email.setSmtpPort(465);
+    email.setAuthenticator(new DefaultAuthenticator("pamulabs@gmail.com", "pamu@pamulabs@2015"))
+    email.setSSLOnConnect(true);
+    email.setFrom(from);
+    email.addTo(to)
     email.setSubject(subject)
-    email.sendHtml(htmlBody)
+    email.setHtmlMsg(htmlBody)
+    email.send()
   }
 }

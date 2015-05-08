@@ -54,9 +54,9 @@ object Utils {
     val query = for(verification <- Datastore.verifications.filter(_.email === email)) yield verification
     if (query.exists.run) {
       val verification = query.first
-      utils.Utils.sendHtmlEmail("pamulabs@gmail.com", verification.email,
-        "Verification Email from Grito",
-        s"""<a href="http://grito.herokuapp.com/${verification.email}/${verification.string}">Click to verify before link expiry</a>""")
+      utils.Utils.sendHtmlEmail("pamulabs@gmail.com", verification.email, "Verification Email from Grito",
+        s"""<a href="http://grito.herokuapp.com/${verification.email}/${verification.string}">
+           |Click to verify before link expiry</a>""".stripMargin)
     }
   }}
   
