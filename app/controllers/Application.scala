@@ -58,10 +58,22 @@ object Application extends Controller {
       signupForm.bindFromRequest().fold(
         hasErrors => BadRequest(views.html.signup(hasErrors)),
         success => {
-          Datastore.saveUser(success._1, success._2._1)
+          //Datastore.saveUser(success._1, success._2._1)
+          Datastore.saveVerification(success._1, success._2._1)
           Redirect(routes.Application.login)
         }
         )
+    }
+  }
+
+  def verify(email: String, randstr: String) = Action.async { implicit request =>
+    Future {
+      if (models.Utils.timedout(email, randstr)) {
+        Redirect(routes.Application.signup())
+      } else {
+        //create user from verification
+        Redirect(routes.Application.login())
+      }
     }
   }
 

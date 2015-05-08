@@ -44,5 +44,18 @@ object Tables {
     
     def addressIdFk = foreignKey("userAddressIdFk", addressId, TableQuery[Addresses])(_.id, ForeignKeyAction.Cascade, ForeignKeyAction.Cascade)
   }
+  
+  val verificationTable = "verifications"
+  case class Verification(email: String, password: String, string: String, verified: Boolean, timestamp: Timestamp, id: Option[Long] = None)
+  class Verifications(tag: Tag) extends Table[Verification](tag, verificationTable) {
+    def email = column[String]("email", O.NotNull)
+    def string = column[String]("string", O.NotNull)
+    def verified = column[Boolean]("verified", O.NotNull)
+    def timestamp = column[Timestamp]("timestamp", O.NotNull)
+    def id = column[Long]("id", O.PrimaryKey, O.AutoInc)
+    
+    def * = (email, string, verified, timestamp, id.?) <> (Verification.tupled, Verification.unapply _)
+  }
+  
       
 }

@@ -12,7 +12,8 @@ libraryDependencies ++= Seq(
 	"org.webjars" % "jquery" % "1.9.0",
 	"org.webjars" % "requirejs" % "2.1.11-1",
 	"joda-time" % "joda-time" % "2.7",
-	"org.postgresql" % "postgresql" % "9.4-1200-jdbc41"
+	"org.postgresql" % "postgresql" % "9.4-1200-jdbc41",
+	"com.typesafe.play.plugins" %% "play-plugins-mailer" % "2.3.1"
 )
 
 //PlayScala
