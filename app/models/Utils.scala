@@ -22,7 +22,7 @@ object Utils {
     } }
   }
 
-  def timedout(email: String, randstr: String): Boolean = {
+  def validRequest(email: String, randstr: String): Boolean = {
     Datastore.db.withSession { implicit  sx => {
       val query = for (verification <- Datastore.verifications
         .filter(_.email === email).filter(_.string === randstr)) yield verification
@@ -43,6 +43,11 @@ object Utils {
     if (query.exists.run) {
       Datastore.saveUser(email, query.first.password)
     }
+  }}
+
+  def markVerified(email: String): Unit = Datastore.db.withSession {implicit sx => {
+    val query = for(verification <- Datastore.verifications.filter(_.email === email)) yield verification.verified
+    query.update(true).run
   }}
   
 }

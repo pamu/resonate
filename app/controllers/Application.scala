@@ -60,7 +60,8 @@ object Application extends Controller {
         success => {
           //Datastore.saveUser(success._1, success._2._1)
           Datastore.saveVerification(success._1, success._2._1)
-          Redirect(routes.Application.login)
+          //sendEmail()
+          Redirect(routes.Application.signup()).flashing("success" -> "verification email sent")
         }
         )
     }
@@ -68,12 +69,12 @@ object Application extends Controller {
 
   def verify(email: String, randstr: String) = Action.async { implicit request =>
     Future {
-      if (models.Utils.timedout(email, randstr)) {
-        Redirect(routes.Application.signup())
-      } else {
+      if (models.Utils.validRequest(email, randstr)) {
         //create user from verification
-        Redirect(routes.Application.login())
-      }
+        markVerified(email)
+        createUser(email)
+        Redirect(routes.Application.login()).flashing("success" -> "email verified")
+      } else Redirect(routes.Application.signup()).flashing("failure" -> "session expired")
     }
   }
 
