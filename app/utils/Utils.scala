@@ -9,7 +9,7 @@ object Utils {
     val email = new HtmlEmail()
     email.setHostName("smtp.gmail.com")
     email.setSmtpPort(465);
-    email.setAuthenticator(new DefaultAuthenticator("pamulabs@gmail.com", "pamu@pamulabs@2015"))
+    email.setAuthenticator(new DefaultAuthenticator("reactive999@gmail.com", "palakurthy"))
     email.setSSLOnConnect(true);
     email.setFrom(from);
     email.addTo(to)
