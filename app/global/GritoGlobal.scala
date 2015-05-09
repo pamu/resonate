@@ -10,8 +10,8 @@ object GritoGlobal extends GlobalSettings {
   override def onStart(app: Application): Unit = {
     super.onStart(app)
     Logger.info("Grito Started")
-    clean
-    createInCase
+    //clean
+    //createInCase
   }
   override def onStop(app: Application): Unit = {
     super.onStop(app)
