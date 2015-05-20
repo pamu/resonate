@@ -59,8 +59,11 @@ object Application extends Controller {
         hasErrors => BadRequest(views.html.signup(hasErrors)(flash)),
         success => {
           //Datastore.saveUser(success._1, success._2._1)
-          Datastore.saveVerification(success._1, success._2._1)
-          sendVerificationEmail(success._1)
+          try {
+            Datastore.saveVerification(success._1, success._2._1)
+            sendVerificationEmail(success._1)
+          }
+          catch {case ex: Exception => Ok("error")}
           Redirect(routes.Application.signup()).flashing("success" -> "verification email sent")
         }
         )
