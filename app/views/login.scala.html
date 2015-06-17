@@ -11,7 +11,7 @@
 		<legend>Login or <a href="/signup">Go to Sign Up.</a></legend>
 		<div class="well">
 		
-			@form(action = routes.Application.loginTarget()){
+			@form(action = routes.Auth.loginPost()){
 				
 				@inputText(
 					loginForm("email"),
@@ -32,6 +32,10 @@
 		</fieldset>
 
 	@flash.get("success").map{ message =>
+		<div class="alert alert-success">@message</div>
+	}
+
+	@flash.get("failure").map{ message =>
 		<div class="alert alert-success">@message</div>
 	}
 	

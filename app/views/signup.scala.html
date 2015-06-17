@@ -6,7 +6,7 @@
 
 @main("Grito"){
 		
-		@form(action = routes.Application.signupTarget){
+		@form(action = routes.Auth.signupPost){
 			
 			<fieldset>
 				
@@ -41,7 +41,11 @@
 		@flash.get("success").map{ message =>
 			<div class="alert alert-success">@message</div>
 		}
-		
+
+		@flash.get("failure").map{ message =>
+			<div class="alert alert-success">@message</div>
+		}
+
 		@signupForm.globalErrors.map{ error =>
 			<div class="alert alert-error">@Messages(error.message)</div>
 		}
