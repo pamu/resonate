@@ -1,2 +1,0 @@
-# resonate
-Resonate Project

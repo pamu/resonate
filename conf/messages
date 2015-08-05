@@ -1,3 +1,0 @@
-error.login_failed=email or password is incorrect
-error.signup_failed=email is already taken
-error.passwords_do_not_match=passwords do not match
