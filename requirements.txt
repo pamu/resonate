@@ -1,0 +1,4 @@
+Django==1.8.3
+numpy==1.9.2
+simplejson==3.7.3
+virtualenv==13.1.0
